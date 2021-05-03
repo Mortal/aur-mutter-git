@@ -1,0 +1,20 @@
+diff --git a/src/backends/native/meta-onscreen-native.c b/src/backends/native/meta-onscreen-native.c
+index eb49bd45c..42daf949c 100644
+--- a/src/backends/native/meta-onscreen-native.c
++++ b/src/backends/native/meta-onscreen-native.c
+@@ -215,7 +215,15 @@ notify_view_crtc_presented (MetaRendererView *view,
+                             CoglFrameInfoFlag flags,
+                             unsigned int      sequence)
+ {
++  if (view == NULL) {
++    // g_assert_not_reached ();
++    return;
++  }
+   ClutterStageView *stage_view = CLUTTER_STAGE_VIEW (view);
++  if (stage_view == NULL) {
++    // g_assert_not_reached ();
++    return;
++  }
+   CoglFramebuffer *framebuffer =
+     clutter_stage_view_get_onscreen (stage_view);
+   CoglOnscreen *onscreen = COGL_ONSCREEN (framebuffer);
