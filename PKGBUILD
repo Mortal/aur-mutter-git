@@ -4,7 +4,7 @@
 
 pkgname=mutter-git
 _pkgname=mutter
-pkgver=40.0+24+ga796edd89
+pkgver=40.3
 pkgrel=1
 pkgdesc="A window manager for GNOME."
 url="https://gitlab.gnome.org/GNOME/mutter"
@@ -18,7 +18,7 @@ makedepends=(gobject-introspection git egl-wayland meson xorg-server)
 provides=(mutter)
 conflicts=(mutter)
 groups=(gnome)
-source=("git+https://gitlab.gnome.org/GNOME/mutter.git" workaround-nullptr-crash-20210503.patch)
+source=("git+https://gitlab.gnome.org/GNOME/mutter.git#tag=40.3" workaround-nullptr-crash-20210503.patch)
 sha256sums=('SKIP'
             '17db86d0ffbddf0a09734e52e77690255583742c447189e63bac58f79bc72c3d')
 
